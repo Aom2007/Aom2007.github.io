@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aryan Majano | Portfolio</title>
+  <meta name="description" content="Aryan Majano: Rutgers student with hands-on FedEx operations experience, focused on supply chain, logistics, and sustainable design.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1d2733;
+      --paper: #f7f6f2;
+      --kraft: #b98a5a;
+      --kraft-light: #efe3d3;
+      --navy: #17324d;
+      --signal: #e8b100;
+      --line: #d9d4c9;
+      --serif: "Fraunces", Georgia, "Times New Roman", serif;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+    a { color: var(--navy); }
+    a:focus-visible, .btn:focus-visible {
+      outline: 3px solid var(--signal);
+      outline-offset: 3px;
+    }
 
+    /* Nav */
+    header.nav {
+      position: sticky; top: 0; z-index: 10;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 1000px; margin: 0 auto; padding: 14px 24px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .nav-name { font-family: var(--serif); font-weight: 800; font-size: 1.1rem; text-decoration: none; color: var(--ink); }
+    .nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
+    .nav ul a { text-decoration: none; color: var(--ink); font-weight: 500; font-size: .95rem; padding: 4px 0; border-bottom: 2px solid transparent; }
+    .nav ul a:hover { border-bottom-color: var(--signal); }
+
+    main { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+    /* Hero / statement */
+    .hero { padding: 88px 0 72px; }
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 800;
+      font-size: clamp(2.6rem, 8vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin: 0 0 28px;
+      color: var(--navy);
+    }
+    .statement {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(1.3rem, 3vw, 1.85rem);
+      line-height: 1.35;
+      max-width: 30em;
+      margin: 0;
+      padding-left: 20px;
+      border-left: 6px solid var(--signal);
+    }
+
+    section { padding: 56px 0; border-top: 1px solid var(--line); }
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 4vw, 2.3rem);
+      margin: 0 0 8px;
+      color: var(--navy);
+    }
+    .sub { margin: 0 0 32px; color: #55606c; max-width: 40em; }
+
+    /* Skills */
+    .skill-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .skill-group { background: #fff; border: 1px solid var(--line); border-top: 5px solid var(--kraft); padding: 22px; }
+    .skill-group h3 { margin: 0 0 14px; font-size: 1.05rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .chips li {
+      background: var(--kraft-light);
+      border: 1px solid #e0cfb8;
+      padding: 5px 12px;
+      font-size: .92rem;
+      font-weight: 500;
+    }
+
+    /* Projects */
+    .project { display: grid; grid-template-columns: 1fr; gap: 10px; background: #fff; border: 1px solid var(--line); padding: 28px; margin-bottom: 24px; }
+    .project h3 { font-family: var(--serif); font-size: 1.45rem; margin: 0; color: var(--navy); }
+    .meta { margin: 0; font-size: .9rem; color: #55606c; font-weight: 500; }
+    .project p { margin: 6px 0 0; max-width: 46em; }
+    .highlights { margin: 8px 0 0; padding-left: 20px; }
+    .highlights li { margin-bottom: 4px; }
+    .btn {
+      display: inline-block; margin-top: 14px;
+      background: var(--navy); color: #fff; text-decoration: none;
+      padding: 10px 18px; font-weight: 600; font-size: .95rem;
+      border-radius: 4px; justify-self: start;
+    }
+    .btn:hover { background: #0f2438; }
+
+    footer { padding: 36px 24px 48px; text-align: center; color: #55606c; font-size: .9rem; border-top: 1px solid var(--line); }
+
+    @media (max-width: 560px) {
+      .nav-inner { flex-direction: column; gap: 6px; }
+      .hero { padding: 56px 0 48px; }
+      .project { padding: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-name" href="#top">Aryan Majano</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#statement">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- 1. PERSONAL STATEMENT -->
+    <section class="hero" id="statement" style="border-top:none;">
+      <h1>Aryan Majano</h1>
+      <p class="statement">
+        I'm a Rutgers University student with hands-on FedEx operations experience, building a career in supply chain, logistics, and sustainable design.
+      </p>
+    </section>
+
+    <!-- 2. SKILLS -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <p class="sub">What I bring to a team, from the warehouse floor to the classroom.</p>
+
+      <div class="skill-groups">
+        <div class="skill-group">
+          <h3>Technical &amp; Software</h3>
+          <ul class="chips">
+            <li>Microsoft Word</li>
+            <li>Microsoft PowerPoint</li>
+            <li>Microsoft Excel</li>
+            <li>RF Scanners (FedEx operational experience)</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h3>Supply Chain &amp; Logistics Core</h3>
+          <ul class="chips">
+            <li>Global Sourcing &amp; Procurement Strategies</li>
+            <li>Smart Manufacturing</li>
+            <li>Operations Management</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <ul class="chips">
+            <li>Spanish (Intermediate)</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h3>Professional &amp; Soft Skills</h3>
+          <ul class="chips">
+            <li>Analytical Thinking</li>
+            <li>Team Collaboration</li>
+            <li>Problem Solving</li>
+            <li>Public Speaking &amp; Presentations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="sub">Two projects that show how I work: one built by hand, one built on a fast-moving operations team.</p>
