@@ -99,98 +99,25 @@
     /* Projects */
     .project { display: grid; grid-template-columns: 1fr; gap: 10px; background: #fff; border: 1px solid var(--line); padding: 28px; margin-bottom: 24px; }
     .project h3 { font-family: var(--serif); font-size: 1.45rem; margin: 0; color: var(--navy); }
+    .project h4 { margin: 18px 0 4px; font-size: 1.02rem; color: var(--navy); }
     .meta { margin: 0; font-size: .9rem; color: #55606c; font-weight: 500; }
     .project p { margin: 6px 0 0; max-width: 46em; }
-    .highlights { margin: 8px 0 0; padding-left: 20px; }
+    .highlights { margin: 8px 0 0; padding-left: 20px; max-width: 46em; }
     .highlights li { margin-bottom: 4px; }
+
+    .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 6px; }
+    .detail { background: var(--paper); border-left: 4px solid var(--kraft); padding: 14px 16px; }
+    .detail h4 { margin: 0 0 4px; }
+    .detail p { margin: 0; font-size: .95rem; }
+
+    .test-result { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+    .stat { background: var(--kraft-light); border: 1px solid #e0cfb8; padding: 12px 18px; min-width: 150px; }
+    .stat .num { font-family: var(--serif); font-weight: 800; font-size: 1.6rem; color: var(--navy); display: block; line-height: 1.1; }
+    .stat .label { font-size: .85rem; color: #55606c; }
+
     .btn {
       display: inline-block; margin-top: 14px;
       background: var(--navy); color: #fff; text-decoration: none;
       padding: 10px 18px; font-weight: 600; font-size: .95rem;
       border-radius: 4px; justify-self: start;
     }
-    .btn:hover { background: #0f2438; }
-
-    footer { padding: 36px 24px 48px; text-align: center; color: #55606c; font-size: .9rem; border-top: 1px solid var(--line); }
-
-    @media (max-width: 560px) {
-      .nav-inner { flex-direction: column; gap: 6px; }
-      .hero { padding: 56px 0 48px; }
-      .project { padding: 20px; }
-    }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-  </style>
-</head>
-<body>
-
-  <header class="nav">
-    <div class="nav-inner">
-      <a class="nav-name" href="#top">Aryan Majano</a>
-      <nav aria-label="Main">
-        <ul>
-          <li><a href="#statement">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="top">
-
-    <!-- 1. PERSONAL STATEMENT -->
-    <section class="hero" id="statement" style="border-top:none;">
-      <h1>Aryan Majano</h1>
-      <p class="statement">
-        I'm a Rutgers University student with hands-on FedEx operations experience, building a career in supply chain, logistics, and sustainable design.
-      </p>
-    </section>
-
-    <!-- 2. SKILLS -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <p class="sub">What I bring to a team, from the warehouse floor to the classroom.</p>
-
-      <div class="skill-groups">
-        <div class="skill-group">
-          <h3>Technical &amp; Software</h3>
-          <ul class="chips">
-            <li>Microsoft Word</li>
-            <li>Microsoft PowerPoint</li>
-            <li>Microsoft Excel</li>
-            <li>RF Scanners (FedEx operational experience)</li>
-          </ul>
-        </div>
-
-        <div class="skill-group">
-          <h3>Supply Chain &amp; Logistics Core</h3>
-          <ul class="chips">
-            <li>Global Sourcing &amp; Procurement Strategies</li>
-            <li>Smart Manufacturing</li>
-            <li>Operations Management</li>
-          </ul>
-        </div>
-
-        <div class="skill-group">
-          <h3>Languages</h3>
-          <ul class="chips">
-            <li>Spanish (Intermediate)</li>
-          </ul>
-        </div>
-
-        <div class="skill-group">
-          <h3>Professional &amp; Soft Skills</h3>
-          <ul class="chips">
-            <li>Analytical Thinking</li>
-            <li>Team Collaboration</li>
-            <li>Problem Solving</li>
-            <li>Public Speaking &amp; Presentations</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. PROJECTS -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <p class="sub">Two projects that show how I work: one built by hand, one built on a fast-moving operations team.</p>
