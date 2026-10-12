@@ -1,32 +1,171 @@
-    <!-- 3. PROJECTS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aryan Majano | Portfolio</title>
+  <meta name="description" content="Aryan Majano: Rutgers student with hands-on FedEx operations experience, focused on supply chain, logistics, and sustainable design.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:#1d2733; --paper:#f7f6f2; --kraft:#b98a5a; --kraft-light:#efe3d3;
+      --navy:#17324d; --signal:#e8b100; --line:#d9d4c9; --sky:#e6eef5;
+      --serif:"Fraunces", Georgia, "Times New Roman", serif;
+      --sans:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:var(--sans); color:var(--ink); background:var(--paper); line-height:1.6; }
+    a { color:var(--navy); }
+    a:focus-visible { outline:3px solid var(--signal); outline-offset:3px; }
+
+    header.nav { position:sticky; top:0; z-index:10; background:var(--paper); border-bottom:1px solid var(--line); }
+    .nav-inner { max-width:1000px; margin:0 auto; padding:14px 24px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .nav-name { font-family:var(--serif); font-weight:800; font-size:1.1rem; text-decoration:none; color:var(--ink); }
+    .nav ul { list-style:none; display:flex; gap:22px; margin:0; padding:0; }
+    .nav ul a { text-decoration:none; color:var(--ink); font-weight:500; font-size:.95rem; padding:4px 0; border-bottom:2px solid transparent; }
+    .nav ul a:hover { border-bottom-color:var(--signal); }
+
+    main { max-width:1000px; margin:0 auto; padding:0 24px; }
+
+    .hero { padding:88px 0 56px; }
+    .hero h1 { font-family:var(--serif); font-weight:800; font-size:clamp(2.6rem,8vw,5rem); line-height:1.02; letter-spacing:-0.02em; margin:0 0 28px; color:var(--navy); }
+    .statement { font-family:var(--serif); font-weight:600; font-size:clamp(1.3rem,3vw,1.85rem); line-height:1.35; max-width:30em; margin:0; padding-left:20px; border-left:6px solid var(--signal); }
+    .hero-actions { margin:28px 0 0 0; display:flex; flex-wrap:wrap; gap:12px; }
+
+    .transit { position:relative; height:170px; margin:0 0 40px 0; overflow:hidden; background:var(--sky); border:1px solid var(--line); }
+    .flight-path { position:absolute; left:0; right:0; top:52px; border-top:2px dashed #b4c4d4; }
+    .transit .plane { position:absolute; top:30px; left:-130px; width:120px; height:40px; animation:fly 26s linear infinite; }
+    .transit .truck { position:absolute; bottom:14px; left:-150px; width:140px; height:60px; animation:drive 20s linear infinite; animation-delay:-6s; }
+    .road { position:absolute; left:0; right:0; bottom:0; height:16px; background:#4b5563; }
+    .road::after { content:""; position:absolute; left:0; right:0; top:7px; border-top:2px dashed #e5e7eb; }
+    @keyframes fly { from { left:-130px; } to { left:100%; } }
+    @keyframes drive { from { left:-150px; } to { left:100%; } }
+
+    section { padding:56px 0; border-top:1px solid var(--line); }
+    section.hero { border-top:none; }
+    h2 { font-family:var(--serif); font-size:clamp(1.7rem,4vw,2.3rem); margin:0 0 8px; color:var(--navy); }
+    .sub { margin:0 0 32px; color:#55606c; max-width:40em; }
+
+    .skill-groups { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+    .skill-group { background:#fff; border:1px solid var(--line); border-top:5px solid var(--kraft); padding:22px; }
+    .skill-group h3 { margin:0 0 14px; font-size:1.05rem; }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; }
+    .chips li { background:var(--kraft-light); border:1px solid #e0cfb8; padding:5px 12px; font-size:.92rem; font-weight:500; }
+
+    .btn { display:inline-block; background:var(--navy); color:#fff; text-decoration:none; padding:10px 18px; font-weight:600; font-size:.95rem; border-radius:4px; border:2px solid var(--navy); }
+    .btn:hover { background:#0f2438; border-color:#0f2438; }
+    .btn-outline { background:transparent; color:var(--navy); }
+    .btn-outline:hover { background:var(--navy); color:#fff; }
+    .contact-actions { display:flex; flex-wrap:wrap; gap:12px; }
+
+    footer { padding:36px 24px 48px; text-align:center; color:#55606c; font-size:.9rem; border-top:1px solid var(--line); }
+
+    @media (max-width:560px) {
+      .nav-inner { flex-direction:column; gap:6px; }
+      .hero { padding:56px 0 40px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      .transit .plane { animation:none; left:62%; }
+      .transit .truck { animation:none; left:22%; }
+    }
+  </style>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="plane" viewBox="0 0 120 40">
+        <path d="M56 16 L72 3 L81 3 L71 16Z" style="fill:#5d7a95"/>
+        <path d="M10 18 L3 3 L18 3 L27 16Z" style="fill:#e8b100"/>
+        <path d="M6 20 C6 14 20 12 60 12 L100 14 C112 15 119 18 119 20 C119 22 112 25 100 26 L60 28 C20 28 6 26 6 20Z" style="fill:#17324d"/>
+        <path d="M50 22 L74 38 L85 38 L72 21Z" style="fill:#2c5278"/>
+        <rect x="64" y="29" width="12" height="6" rx="3" style="fill:#e8b100"/>
+        <circle cx="88" cy="19" r="2" style="fill:#fff"/>
+        <circle cx="96" cy="19.5" r="2" style="fill:#fff"/>
+        <circle cx="104" cy="20" r="2" style="fill:#fff"/>
+        <circle cx="40" cy="19" r="1.6" style="fill:#9db4c9"/>
+        <circle cx="48" cy="19" r="1.6" style="fill:#9db4c9"/>
+        <circle cx="56" cy="19" r="1.6" style="fill:#9db4c9"/>
+      </symbol>
+      <symbol id="truck" viewBox="0 0 140 60">
+        <rect x="2" y="6" width="86" height="38" rx="3" style="fill:#b98a5a"/>
+        <rect x="2" y="30" width="86" height="6" style="fill:#9a6f43"/>
+        <path d="M92 18 H117 L134 33 V44 H92Z" style="fill:#17324d"/>
+        <path d="M98 23 H114 L124 33 H98Z" style="fill:#cfe0ee"/>
+        <rect x="130" y="38" width="8" height="6" rx="2" style="fill:#e8b100"/>
+        <rect x="2" y="44" width="134" height="4" style="fill:#2b3744"/>
+        <circle cx="24" cy="50" r="8" style="fill:#1f2933"/><circle cx="24" cy="50" r="3" style="fill:#aab4be"/>
+        <circle cx="46" cy="50" r="8" style="fill:#1f2933"/><circle cx="46" cy="50" r="3" style="fill:#aab4be"/>
+        <circle cx="112" cy="50" r="8" style="fill:#1f2933"/><circle cx="112" cy="50" r="3" style="fill:#aab4be"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-name" href="#top">Aryan Majano</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#statement">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero" id="statement">
+      <h1>Aryan Majano</h1>
+      <p class="statement">I'm a Rutgers University student with hands-on FedEx operations experience, building a career in supply chain, logistics, and sustainable design.</p>
+      <div class="hero-actions">
+        <a class="btn" href="Majano%20Aryan%20Resume.pdf" target="_blank" rel="noopener">View my resume (PDF)</a>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/aryanmajano/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+    </section>
+
+    <div class="transit" role="img" aria-label="Illustration of a cargo plane flying over a delivery truck on the road">
+      <div class="flight-path"></div>
+      <svg class="plane" aria-hidden="true"><use href="#plane"/></svg>
+      <svg class="truck" aria-hidden="true"><use href="#truck"/></svg>
+      <div class="road"></div>
+    </div>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <p class="sub">What I bring to a team, from the warehouse floor to the classroom.</p>
+      <div class="skill-groups">
+        <div class="skill-group">
+          <h3>Technical &amp; Software</h3>
+          <ul class="chips">
+            <li>Microsoft Word</li><li>Microsoft PowerPoint</li><li>Microsoft Excel</li><li>RF Scanners (FedEx operational experience)</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Supply Chain &amp; Logistics Core</h3>
+          <ul class="chips">
+            <li>Global Sourcing &amp; Procurement Strategies</li><li>Smart Manufacturing</li><li>Operations Management</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <ul class="chips"><li>Spanish (Intermediate)</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Professional &amp; Soft Skills</h3>
+          <ul class="chips">
+            <li>Analytical Thinking</li><li>Team Collaboration</li><li>Problem Solving</li><li>Public Speaking &amp; Presentations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section id="projects">
       <h2>Projects</h2>
       <p class="sub">Two projects that show how I work: one built by hand, one built on a fast-moving operations team.</p>
-
-      <!-- PROJECT 1 -->
-      <div style="display:block; background:#ffffff; border:1px solid #d9d4c9; border-left:6px solid #b98a5a; padding:24px; margin:0 0 24px 0;">
-        <h3 style="font-family:Georgia,serif; font-size:1.5rem; margin:0 0 6px 0; color:#17324d;">Project 1: Sustainable Architecture &amp; Solar Integration Model</h3>
-        <p style="margin:0 0 12px 0; color:#55606c; font-weight:500;">Prince George's County Summer Youth Employment Program</p>
-        <p style="margin:0 0 12px 0;">
-          <strong>Summary:</strong> Developed during the Prince George's County Summer Youth Employment Program. Researched future trends in sustainable architecture and constructed a physical model house featuring fully integrated solar panels, supported by 5 weeks of rigorous virtual technical sessions and project deliverables.
-        </p>
-        <ul style="margin:0 0 14px 0; padding-left:20px;">
-          <li>Painted the house like a real home with a realistic roof and a porch light, and hid all the wiring inside the roof with a small battery box for the porch light.</li>
-          <li>Wired the roof-mounted solar panel to two lights.</li>
-          <li>Sealed the door with weather strips and covered the windows with transparent paper.</li>
-          <li>Insulated the walls with paper towels and a soft material, and lined the roof with aluminum foil.</li>
-          <li>Final test: temperature went from 71.4&nbsp;&deg;F to 70.0&nbsp;&deg;F, a 1.4&nbsp;&deg;F change.</li>
-        </ul>
-        <a href="energy-house.pdf" target="_blank" rel="noopener" style="display:inline-block; background:#17324d; color:#ffffff; text-decoration:none; padding:10px 18px; font-weight:600; border-radius:4px;">View the Energy House Template (PDF)</a>
-      </div>
-
-      <!-- PROJECT 2 -->
-      <div style="display:block; background:#ffffff; border:1px solid #d9d4c9; border-left:6px solid #b98a5a; padding:24px; margin:0 0 24px 0;">
-        <h3 style="font-family:Georgia,serif; font-size:1.5rem; margin:0 0 6px 0; color:#17324d;">Project 2: Large-Scale Logistics &amp; Package Handling Optimization</h3>
-        <p style="margin:0 0 12px 0; color:#55606c; font-weight:500;">FedEx operational experience</p>
-        <p style="margin:0 0 14px 0;">
-          <strong>Summary:</strong> Highlighted from operational experience at FedEx. Maintained an efficient throughput of 350 packages per hour while collaborating with cross-functional team members using RF scanners, directly contributing to orderly warehouse sorting workflows and fast-paced supply chain transit.
-        </p>
-        <a href="FDXletter.docx" style="display:inline-block; background:#17324d; color:#ffffff; text-decoration:none; padding:10px 18px; font-weight:600; border-radius:4px;">View my FedEx recommendation letter (FDXletter)</a>
-      </div>
-    </section>
